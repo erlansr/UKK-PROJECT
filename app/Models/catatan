@@ -1,0 +1,69 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class OrderItem extends Model
+{
+    protected $fillable = [
+        'order_id',
+        'product_id',
+        'price',
+        'quantity',
+        'subtotal'
+    ];
+    
+    // Relasi ke Order
+    public function order(): BelongsTo
+    {
+        return $this->belongsTo(Order::class);
+    }
+    
+    // Relasi ke Product
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
+    }
+}
+
+
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Order extends Model
+{
+    protected $fillable = [
+        'invoice_number',
+        'user_id',
+        'total',
+        'status',
+        'alamat',
+        'no_hp',
+        'catatan',
+        'jasa_pengiriman',
+        'metode_pembayaran',
+        'payment_confirmed',
+        'payment_confirmed_at'
+    ];
+    
+    // Relasi ke User
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+    
+    // Relasi ke OrderItems (WAJIB DITAMBAHKAN INI)
+    public function orderItems(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+}
