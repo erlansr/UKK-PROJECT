@@ -259,8 +259,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `profile_photo`, `email_verified_at`, `password`, `role`, `is_active`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'admin@example.com', NULL, NULL, '$2y$12$C8/qVBHhHohWz4v.P81X6OiLXTRbnZ7S5svEBClhjJG2ADs91EalO', 'admin', 1, NULL, '2026-04-05 10:48:19', '2026-04-05 10:48:19'),
-(2, 'ejong', 'jong@gmail.com', NULL, NULL, '$2y$12$1M5aCoSSZhla31uvVUKaWOsDag9V.NVP0YKxMnzltKLU3rwINauHu', 'user', 1, NULL, '2026-04-05 17:55:21', '2026-04-05 17:55:21');
+(1, 'Administrator', 'admin@example.com', NULL, NULL, '$2y$12$C8/qVBHhHohWz4v.P81X6OiLXTRbnZ7S5svEBClhjJG2ADs91EalO', 'admin', 1, NULL, '2026-04-05 10:48:19', '2026-04-05 10:48:19');
+
 
 --
 -- Indexes for dumped tables
